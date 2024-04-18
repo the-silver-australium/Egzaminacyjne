@@ -9,7 +9,7 @@
     <Grid>
         <StackPanel HorizontalAlignment="Center" Margin="10">
             <Label FontSize="20" FontWeight="DemiBold">Wzory aplikacji desktopowych</Label>
-        <Button Click="Button_Click" Margin="20">Styczeń 2024</Button>
+        <Button Click="Button_Click" Margin="20"  >Styczeń 2024</Button>
         <Button Margin="20">Styczeń 2023</Button>
         <Button Margin="20">Czerwiec 2023</Button>
         <Button Margin="20">Egzamin</Button>
