@@ -7,14 +7,41 @@
         mc:Ignorable="d"
         Title="zad1" Height="450" Width="800">
     <Grid>
-        <Button Content="zatwierdż" Margin="37,393,43,10" Click="Button_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="499,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104"><Run Language="pl-pl" Text="Konopnickiej 98"/></TextBlock>
-        <TextBox TextWrapping="Wrap" Text="Ulica z numerem" Margin="499,86,92,328" TextChanged="TextBox_TextChanged"/>
-        <TextBox HorizontalAlignment="Left" Margin="500,148,0,0" TextWrapping="Wrap" Text="65124" VerticalAlignment="Top" Width="104" TextChanged="TextBox_TextChanged_1"/>
-        <TextBox HorizontalAlignment="Left" Margin="499,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="209"/>
-        <TextBlock HorizontalAlignment="Left" Margin="499,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="87"><Run Language="pl-pl" Text="Miasto"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="502,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101"><Run Language="pl-pl" Text="Kod pocztowy"/></TextBlock>
-
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2.5*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Right"
+                    VerticalAlignment="Top">
+            <Button Margin="5" Click="Button_Click">wróć</Button>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <GroupBox Header="Rodzaj przesyłki">
+                <StackPanel>
+                    <RadioButton Margin="10">Pocztówka</RadioButton>
+                    <RadioButton Margin="10">List</RadioButton>
+                    <RadioButton Margin="10">Paczka</RadioButton>
+                </StackPanel>
+            </GroupBox>
+            <Button Margin="10">Sprawdż cenę:</Button>
+            <StackPanel Orientation="Horizontal">
+                <Image Visibility="Collapsed" Width="100" Source="C:\Users\student\Desktop\github\Egzaminacyjne\WpfApp1\WpfApp1\list.png"></Image>
+                <Image Visibility="Collapsed" Width="100" Source="C:\Users\student\Desktop\github\Egzaminacyjne\WpfApp1\WpfApp1\paczka.png"></Image>
+                <Image Visibility="Visible" Width="100" Source="C:\Users\student\Desktop\github\Egzaminacyjne\WpfApp1\WpfApp1\pocztowka.png"></Image>
+                <Label Content="Cena:" FontSize="18" FontWeight="Bold"></Label>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <GroupBox Header="Dane adresowe">
+                <StackPanel>
+                    <Label>Ulica z numerami:</Label>
+                    <CheckBox Width="200"></CheckBox>
+                    <Label>Kod pocztowy:</Label>
+                    <TextBox Width="80" HorizontalAlignment="Left" ></TextBox>
+                    <Label>Miasto:</Label>
+                    <TextBox></TextBox>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
     </Grid>
 </Window>
