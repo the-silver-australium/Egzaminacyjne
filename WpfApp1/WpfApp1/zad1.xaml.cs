@@ -26,17 +26,54 @@ namespace WpfApp1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if(paczka.IsChecked == true)
+            {
+                paczka_zdj.Visibility = Visibility.Visible;
+                list_zdj.Visibility = Visibility.Collapsed;
+                pocztowka_zdj.Visibility = Visibility.Collapsed;
+                cena.Content = "Cena: 10 zł";
+            }
+            else if(list.IsChecked == true)
+            {
+                paczka_zdj.Visibility = Visibility.Collapsed;
+                list_zdj.Visibility = Visibility.Visible;
+                pocztowka_zdj.Visibility = Visibility.Collapsed;
+                cena.Content = "Cena: 1.5 zł";
+            }
+            else
+            {
+                paczka_zdj.Visibility = Visibility.Collapsed;
+                list_zdj.Visibility = Visibility.Collapsed;
+                pocztowka_zdj.Visibility = Visibility.Visible;
+                cena.Content = "Cena: 1 zł";
+            }
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
+            int kod;
+            bool prawidlowy_kod = int.TryParse(Kod_pocztowy.Text, out kod);
+            if(prawidlowy_kod == true)
+            {
+                if(Kod_pocztowy.Text.Length == 5)
+                {
+                    MessageBox.Show($" Dane adresowe: {ulica.Text},{miasto.Text},{kod} ");
+                }
+                else
+                {
+                    MessageBox.Show("Kod pocztowe powinien składać się z 5 cyfr");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Kod pocztowy powienien składać się z samych cyfr");
+            }
         }
     }
 }

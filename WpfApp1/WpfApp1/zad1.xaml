@@ -18,30 +18,31 @@
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <GroupBox Header="Rodzaj przesyłki">
                 <StackPanel>
-                    <RadioButton Margin="10">Pocztówka</RadioButton>
-                    <RadioButton Margin="10">List</RadioButton>
-                    <RadioButton Margin="10">Paczka</RadioButton>
+                    <RadioButton x:Name="pocztowka" Margin="10">Pocztówka</RadioButton>
+                    <RadioButton x:Name="list" Margin="10">List</RadioButton>
+                    <RadioButton x:Name="paczka" Margin="10">Paczka</RadioButton>
                 </StackPanel>
             </GroupBox>
-            <Button Margin="10">Sprawdż cenę:</Button>
+            <Button Click="Button_Click_1" Margin="10">Sprawdż cenę:</Button>
             <StackPanel Orientation="Horizontal">
-                <Image Visibility="Collapsed" Width="100" Source="C:\Users\student\Desktop\github\Egzaminacyjne\WpfApp1\WpfApp1\list.png"></Image>
-                <Image Visibility="Collapsed" Width="100" Source="C:\Users\student\Desktop\github\Egzaminacyjne\WpfApp1\WpfApp1\paczka.png"></Image>
-                <Image Visibility="Visible" Width="100" Source="C:\Users\student\Desktop\github\Egzaminacyjne\WpfApp1\WpfApp1\pocztowka.png"></Image>
-                <Label Content="Cena:" FontSize="18" FontWeight="Bold"></Label>
+                <Image x:Name="paczka_zdj" Visibility="Collapsed" Width="100" Source="C:\Users\student\Desktop\github\Egzaminacyjne\WpfApp1\WpfApp1\list.png"></Image>
+                <Image x:Name="pocztowka_zdj" Visibility="Collapsed" Width="100" Source="C:\Users\student\Desktop\github\Egzaminacyjne\WpfApp1\WpfApp1\paczka.png"></Image>
+                <Image x:Name="list_zdj" Visibility="Visible" Width="100" Source="C:\Users\student\Desktop\github\Egzaminacyjne\WpfApp1\WpfApp1\pocztowka.png"></Image>
+                <Label x:Name="cena" Content="cena:" FontSize="18" FontWeight="Bold"></Label>
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <GroupBox Header="Dane adresowe">
                 <StackPanel>
                     <Label>Ulica z numerami:</Label>
-                    <CheckBox Width="200"></CheckBox>
+                    <TextBox Name="ulica" Width="200" HorizontalAlignment="Left"></TextBox>
                     <Label>Kod pocztowy:</Label>
-                    <TextBox Width="80" HorizontalAlignment="Left" ></TextBox>
+                    <TextBox Name="Kod_pocztowy" Width="80" HorizontalAlignment="Left" ></TextBox>
                     <Label>Miasto:</Label>
-                    <TextBox></TextBox>
+                    <TextBox Name="miasto" Width="200" HorizontalAlignment="Left"></TextBox>
                 </StackPanel>
             </GroupBox>
         </StackPanel>
+        <Button Click="Button_Click_2" Grid.Column="2" VerticalAlignment="Bottom" Margin="20"></Button>
     </Grid>
 </Window>
